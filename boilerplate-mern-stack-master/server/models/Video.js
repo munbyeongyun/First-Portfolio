@@ -1,8 +1,7 @@
-const { Schema } = require("mongoose");
-const Schema = mongoose.Schema;
 const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
-const videouserSchema = mongoose.Schema(
+const videoSchema = mongoose.Schema(
   {
     writer: {
       type: Schema.Types.ObjectId,
@@ -38,6 +37,6 @@ const videouserSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-const Video = mongoose.model("Video", VideoSchema);
+const Video = mongoose.model("Video", videoSchema);
 
 module.exports = { Video };

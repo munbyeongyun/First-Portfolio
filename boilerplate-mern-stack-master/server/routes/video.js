@@ -80,7 +80,7 @@ router.post("/thumbnail", (req, res) => {
       return res.json({
         success: true,
         url: filePath,
-        fileDuration: fileDurat,
+        fileDuration: fileDuration,
       });
     })
     .on("error", function (err) {
