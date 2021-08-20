@@ -77,8 +77,8 @@ function VideoUploadPage(props) {
     });
   };
 
-  const onSubmit = (e) => {
-    e.prevenDefault();
+  const onSumit = (e) => {
+    e.preventDefault();
 
     const variables = {
       writer: user.userData._id,
@@ -93,8 +93,6 @@ function VideoUploadPage(props) {
 
     axios.post("/api/video/uploadVideo", variables).then((response) => {
       if (response.data.success) {
-        console.log(response.data);
-
         message.success("성공적으로 업로드를 했습니다.");
 
         setTimeout(() => {
@@ -112,7 +110,7 @@ function VideoUploadPage(props) {
         <Title level={2}> Upload Video</Title>
       </div>
 
-      <Form onSubmit={onSubmit}>
+      <Form onSubmit={onSumit}>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <Dropzone onDrop={onDrop} multiple={false} maxSize={800000000}>
             {({ getRootProps, getInputProps }) => (
@@ -174,7 +172,7 @@ function VideoUploadPage(props) {
         <br />
         <br />
 
-        <Button type="primary" size="large" onClick={onSubmit}>
+        <Button type="primary" size="large" onClick={onSumit}>
           Submit
         </Button>
       </Form>
