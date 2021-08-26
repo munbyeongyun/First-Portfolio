@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Row, Col, List, Avatar } from "antd";
 import axios from "axios";
-import { response } from "express";
 
 function VideoDetailPage(props) {
-  const variable = { videoId: videoId };
   const videoId = props.match.params.videoId;
+  const variable = { videoId: videoId };
 
   const [VideoDetail, setVideoDetail] = useState([]);
 
